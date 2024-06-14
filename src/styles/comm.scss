@@ -1,5 +1,5 @@
 html,body{
-  font-size: 12px;
+  font-size: 13px;
 }
 .settings{
   display: flex;
@@ -11,14 +11,23 @@ html,body{
   label{
     display: block;
   }
+
+  input{
+    border: solid 1px #ccc;
+    padding:5px 8px;
+    margin:5px 0;
+    border-radius:5px;
+  }
+
   button{
     padding:5px 12px;
-    margin:10px 0;
+    margin:10px 0 15px;
   }
 }
 
 .save-info{
   display: flex;
+  flex-wrap: wrap;
   table{
     margin:10px;
   }
@@ -53,3 +62,4 @@ button{
     display: inline-flex;
   }
 }
+

@@ -203,11 +203,14 @@
         },
         created() {
             let savedRecords = JSON.parse(localStorage.getItem('milkRecords')) || [];
+
+            // 合并默认记录和 localStorage 中的记录，优先使用 localStorage 中的记录
+            this.records = savedRecords.length > 0 ? savedRecords : defaultRecords;
+
+            // 更新 localStorage 中的数据，确保默认记录在用户第一次加载时保存到 localStorage
             if (savedRecords.length === 0) {
-                savedRecords = defaultRecords;
-                localStorage.setItem('milkRecords', JSON.stringify(savedRecords));
+                localStorage.setItem('milkRecords', JSON.stringify(defaultRecords));
             }
-            this.records = savedRecords;
-        }
+        },
     };
 </script>
